@@ -1,0 +1,12 @@
+body {
+  background-color: black;
+}
+
+#title {
+  text-align: center;
+  height: 130px;
+}
+
+#title img {
+  height: 120px;
+}
