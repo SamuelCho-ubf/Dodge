@@ -7,13 +7,16 @@ const diameter = 12;
 let timeElem;
 let result;
 
+var Interval;
+
 function setup() {
-  timeElem = createDiv('Time = 0');
-  timeElem.id('timer');
-  timeElem.time = 0;
 
   result = createDiv('');
   result.id('result');
+
+  timeElem = createDiv('Time = 0');
+  timeElem.id('timer');
+  timeElem.time = 0;
 
   let cnv = createCanvas(900, 500);
   cnv.style('display', 'block');
@@ -22,6 +25,7 @@ function setup() {
   system2 = new ParticleSystem(createVector(width, height));
   system3 = new ParticleSystem(createVector(0, 0));
   system4 = new ParticleSystem(createVector(width, 0));
+  noLoop();
 }
 
 function draw() {
@@ -39,6 +43,25 @@ function draw() {
   updatePlayerCoordinates();
 }
 
+function startTimer () {
+  timeElem.time++; 
+}
+
+function start() {
+  timeElem.time = 0;
+  xCor = 450;
+  yCor = 250;
+  system1.particles = [];
+  system2.particles = [];
+  system3.particles = [];
+  system4.particles = [];
+  result.html('');
+  
+  document.getElementById('cover').style.display = 'none';
+  clearInterval(Interval);
+  Interval = setInterval(startTimer, 10);
+  loop();
+}
 
 function updatePlayerCoordinates() {
   if (keyIsDown(RIGHT_ARROW) && xCor <= width) {
@@ -70,11 +93,11 @@ Particle.prototype.run = function() {
   this.update();
   this.display();
 
-  timeElem.time = `${ (parseInt(frameCount/60) + (frameCount % 60)/100).toFixed(2) }`;
-  timeElem.html(`Time = ${timeElem.time}sec`);
+  timeElem.html(`Time = ${(timeElem.time/100).toFixed(2)}sec`);
   if (checkPlayerCollision(this.position.x, this.position.y)) {
     noLoop();
-    result.html(`Game Over!<br>Your record is: ${timeElem.time}sec`);
+    result.html(`Game Over!<br>Your record is: ${(timeElem.time/100).toFixed(2)}sec`);
+    document.getElementById('cover').style.display = 'block';
   }
 };
 
