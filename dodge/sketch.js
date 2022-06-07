@@ -1,7 +1,7 @@
 let system;
 
-let xCor = 50;
-let yCor = 50;
+let xCor = 450;
+let yCor = 250;
 const diameter = 12;
 
 let timeElem;
@@ -9,26 +9,31 @@ let result;
 
 function setup() {
   timeElem = createDiv('Time = 0');
-  timeElem.position(20, 150);
-  timeElem.id = 'time';
-  timeElem.style('color', 'white');
+  timeElem.id('timer');
   timeElem.time = 0;
 
   result = createDiv('');
-  result.position(50, 680);
-  result.style('font-size', '30px');
-  result.style('font-weight', 'bold');
-  result.style('color', 'white');
-  result.id = 'result';
+  result.id('result');
 
-  createCanvas(900, 500);
-  system = new ParticleSystem(createVector(width / 2, height / 2));
+  let cnv = createCanvas(900, 500);
+  cnv.style('display', 'block');
+  cnv.style('margin', 'auto');
+  system1 = new ParticleSystem(createVector(0, height));
+  system2 = new ParticleSystem(createVector(width, height));
+  system3 = new ParticleSystem(createVector(0, 0));
+  system4 = new ParticleSystem(createVector(width, 0));
 }
 
 function draw() {
-  background(062,062,084);
-  system.addParticle();
-  system.run();
+  background(08, 033,053);
+  system1.addParticle();
+  system1.run();
+  system2.addParticle();
+  system2.run();
+  system3.addParticle();
+  system3.run();
+  system4.addParticle();
+  system4.run();
   fill('red');
   circle(xCor, yCor, diameter);
   updatePlayerCoordinates();
@@ -37,13 +42,13 @@ function draw() {
 
 function updatePlayerCoordinates() {
   if (keyIsDown(RIGHT_ARROW) && xCor <= width) {
-    xCor += 2;
+    xCor += 3;
   } else if (keyIsDown(LEFT_ARROW) && xCor >= 0) {
-    xCor -= 2;
+    xCor -= 3;
   } else if (keyIsDown(UP_ARROW) && yCor >= 0) {
-    yCor -= 2;
+    yCor -= 3;
   } else if (keyIsDown(DOWN_ARROW) && yCor <= height) {
-    yCor += 2;
+    yCor += 3;
   }
 }
 
@@ -69,7 +74,6 @@ Particle.prototype.run = function() {
   timeElem.html(`Time = ${timeElem.time}sec`);
   if (checkPlayerCollision(this.position.x, this.position.y)) {
     noLoop();
-    textSize(BOLD);
     result.html(`Game Over!<br>Your record is: ${timeElem.time}sec`);
   }
 };
