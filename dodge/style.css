@@ -2,18 +2,28 @@ body {
   background-image: url("./nebula.jpg");
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 3;
+    transform: none;
+  }
+}
+
 #title {
   text-align: center;
-  height: 130px;
+  height: 150px;
 }
 
 #title img {
-  height: 120px;
+  height: 150px;
 }
 
 #timer {
   position: absolute;
-  top: 100px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -29,4 +39,15 @@ body {
   font-weight: bold;
   color: white;
   width: 900px;
+}
+
+#cover {
+  position: absolute;
+  color: white;
+  width: 900px;
+  height: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 500px;
 }
