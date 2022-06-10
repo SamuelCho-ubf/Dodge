@@ -7,7 +7,7 @@ const diameter = 12;
 let timeElem;
 let result;
 
-var Interval;
+let Interval;
 
 function setup() {
 
@@ -29,6 +29,7 @@ function setup() {
 }
 
 function draw() {
+  timeElem.html(`Time = ${(timeElem.time/100).toFixed(2)}sec`);
   background(08, 033,053);
   system1.addParticle();
   system1.run();
@@ -44,11 +45,13 @@ function draw() {
 }
 
 function startTimer () {
-  timeElem.time++; 
+  timeElem.time += 1; 
 }
 
 function start() {
   timeElem.time = 0;
+  clearInterval(Interval);
+  Interval = setInterval(startTimer, 10);
   xCor = 450;
   yCor = 250;
   system1.particles = [];
@@ -58,8 +61,6 @@ function start() {
   result.html('');
   
   document.getElementById('cover').style.display = 'none';
-  clearInterval(Interval);
-  Interval = setInterval(startTimer, 10);
   loop();
 }
 
@@ -93,7 +94,6 @@ Particle.prototype.run = function() {
   this.update();
   this.display();
 
-  timeElem.html(`Time = ${(timeElem.time/100).toFixed(2)}sec`);
   if (checkPlayerCollision(this.position.x, this.position.y)) {
     noLoop();
     result.html(`Game Over!<br>Your record is: ${(timeElem.time/100).toFixed(2)}sec`);

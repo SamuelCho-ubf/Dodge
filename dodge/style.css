@@ -1,5 +1,5 @@
 body {
-  background-image: url("./nebula.jpg");
+  background-image: url("img/nebula.jpg");
 }
 
 @keyframes fadeIn {
@@ -50,4 +50,14 @@ body {
   transform: translateX(-50%);
   text-align: center;
   line-height: 500px;
+}
+
+#cover img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  border: 1px solid white;
+  background-color: rgb(08, 033,053);
 }
