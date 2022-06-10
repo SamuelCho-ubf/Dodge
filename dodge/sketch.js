@@ -29,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-  timeElem.html(`Time = ${(timeElem.time/100).toFixed(2)}sec`);
+  timeElem.html(`Time: ${(timeElem.time/100).toFixed(2)}sec`);
   background(08, 033,053);
   system1.addParticle();
   system1.run();
