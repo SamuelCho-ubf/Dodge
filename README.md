@@ -16,6 +16,34 @@ In addition, this web application was created by actively using p5.js which is a
 - p5.js
 - npm
 
+The installation is pretty straightforward. Run the following commands to update the package index and install Node.js and npm:
+```
+sudo apt update
+sudo apt install nodejs npm
+```
+Once done, verify the installation by running:
+```
+nodejs -v
+npm -v
+```
+clone this repository to your local computer
+```
+git clone https://github.com/SamuelCho-ubf/Dodge.git
+```
+Change directory to the project directory
+```
+cd Dodge
+```
+Install dependencies by running: 
+```
+npm install
+```
+Now, you are ready to start. Run the following command to start live server:
+```
+npm start
+```
+Open any web browser, and type "your_ip_adress:8080" into the address bar  
+Finally, you can enjoy the game!
 
 
 ## How to play?
