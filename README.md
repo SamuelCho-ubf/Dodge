@@ -42,7 +42,9 @@ Now, you are ready to start. Run the following command to start live server:
 ```
 npm start
 ```
+
 Open any web browser, and type "your_ip_adress:8080" into the address bar  
+
 Finally, you can enjoy the game!
 
 
