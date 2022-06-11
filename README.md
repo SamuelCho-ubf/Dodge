@@ -2,7 +2,7 @@
 
 ## What does this project do?
 "Dodge!" is a web application that provides a simple game.  
-The object of the game is to survive as long as possible by avoiding white dots flying from all sides.
+The object of the game is to survive as long as possible by dodging white dots flying from all sides.
 
 ## Why is this project useful?
 This project basically serves as a light entertainment by providing a game to users.  
