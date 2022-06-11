@@ -1,7 +1,7 @@
 # Dodge!
 
 ## What does this project do?
-"Dodge!" is a web application that provides simple games.  
+"Dodge!" is a web application that provides a simple game.  
 The object of the game is to survive as long as possible by avoiding white dots flying from all sides.
 
 ## Why is this project useful?
@@ -50,7 +50,7 @@ Finally, you can enjoy the game!
 ## How to play?
 The rules of the game are simple. The user controls the red dot, and the game ends when it touches any white dots. The user can control the red dot with the arrow keys to dodge the white dots approaching from all sides.
 
-## Contribution of the project
+## Contributions of the project
 I designed and implemented everything from scratch except for the functions brought from the p5.js library.  
 1. Using the p5.js library, I implemented functions for all dynamic movements in the game, such as player manipulation and random dispersion of white dots. 
 2. I implemented the rules of the whole game, such as the function that let the game ended when the player touches any white dots.  
