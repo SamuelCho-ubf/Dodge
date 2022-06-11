@@ -50,6 +50,10 @@ Finally, you can enjoy the game!
 
 ## How to play?
 The rules of the game are simple. The user controls the red dot, and the game ends when it touches any white dots. The user can control the red dot with the arrow keys to dodge the white dots approaching from all sides.
+![image](https://user-images.githubusercontent.com/68087418/173179956-0a33843c-e3aa-40cf-91d2-2a3430912aa8.png)
+![image](https://user-images.githubusercontent.com/68087418/173179962-e1b0c184-2712-4d39-905e-bcc4b174f7e7.png)
+![image](https://user-images.githubusercontent.com/68087418/173179965-c88e9386-07c9-4a59-a51d-c2d98fd00cfa.png)
+
 
 ## Contribution of the project
 I designed and implemented everything from scratch except for the functions brought from the p5.js library.  
